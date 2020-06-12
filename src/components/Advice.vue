@@ -19,7 +19,8 @@ export default {
     getAdvice: function () {
       axios
         .get('https://api.adviceslip.com/advice')
-        .then(response => (this.info = response))
+        .then(response => (this.info = response.data.slip.advice))
+        .catch(error => console.log(error))
     }
   }
 }
